@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Add products</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <br>
+    <center><div class="container">
+    <h1>New product</h1>
+    <form action = "/doInsert" method="post">
+    <div class="form-group">
+    Name: <br>
+    <input type="text" name="txtName" id="">
+    <br><br>
+    Price: <br>
+    <input type="text" name="txtPrice" id="">
+    <br><br>
+    Color: <br>
+        <select name="cars" id="cars">
+        <option value="txtColor">green</option>
+        <option value="txtColor">red</option>
+    </select>
+    <br><br>
+
+        <input type = "submit" value= "Add"> <br>
+    </form>
+    <br><br><br>
+    {{> footer}}
+        </div>
+    </div>
+    </center>
+</body>
+</html>
+
+
+
+
+
+else {
+        let client= await MongoClient.connect(url);  
+        let dbo = client.db("ProductDB2"); 
+        let newProduct = {productName : nameInput, price:priceInput};
+        await dbo.collection("products").insertOne(newProduct);
+    
+        res.redirect('/');
+    }
+    Number
